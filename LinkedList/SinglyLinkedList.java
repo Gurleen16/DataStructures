@@ -101,6 +101,35 @@ public class SinglyLinkedList<E>
     if (isEmpty()) return null;
     return tail.getElement();
   }
+  
+  public E middle()
+  {
+    if (isEmpty()) return null;
+    Node n=head;
+    int sz=size()/2;
+    int i=0;
+    while(i!=sz-1)
+    {
+      n=n.getNext();
+      i++;
+    }
+    return n.getElement();
+  }
+
+  public E nthNodeFromEnd(int k)
+  {
+    if (isEmpty()) return null;
+    Node n=head;
+    int sz=size()-k;
+    int i=0;
+    while(i!=sz-1)
+    {
+      n=n.getNext();
+      i++;
+    }
+    return n.getElement();
+  }
+
 
   // update methods
   /**
